@@ -73,6 +73,31 @@ Tests should be separate tasks here too:
 - workflow smoke tests
 - approval/promotion gate tests
 
+## Controlled Iteration
+
+Analytic work is often evidence-driven. Early runs may expose data quality issues,
+change notebook versus pipeline boundaries, or show that the next useful slice is
+different from what was planned initially. Treat that as normal, but make the
+adjustments explicitly.
+
+Use these rules:
+
+- Revise `design.md` when new findings materially change the architecture,
+  workflow boundaries, review checkpoints, promotion criteria, or artifact
+  strategy.
+- Amend `tasks.md` when sequencing changes, new prerequisites appear, a task is
+  too large, or exploration reveals a better execution slice.
+- Keep requirements stable unless the user problem or success criteria actually
+  changed.
+- Preserve traceability: revised design decisions must still address the active
+  requirements, and amended tasks must still map back to those requirements.
+- Do not silently drift during implementation. Update the spec artifacts first,
+  then continue execution from the revised plan.
+
+This is controlled iteration, not phase-skipping. Requirements still anchor the
+work, and design/task changes should be made deliberately enough that another
+agent can resume from the spec without guessing.
+
 ## What Not To Do
 
 - Do not force a fully productionized architecture onto a short-lived exploration.
