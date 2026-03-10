@@ -5,7 +5,7 @@ description: "Spec-driven development workflow: requirements → design → task
 
 ## Spec-Driven Development
 
-This skill powers the windloop framework. Specs live in a **spec directory** — either `.windloop/specs/<name>/` or `.kiro/specs/<name>/`. The format is the same regardless of location.
+This skill powers the windloop framework. Specs live in a **spec directory** — prefer `.kiro/specs/<name>/`, then fall back to `.windloop/specs/<name>/`. The format is the same regardless of location.
 
 ### When to Use
 
@@ -172,11 +172,11 @@ read `references/analytic-work.md`.
 
 When a command receives a spec name SPEC, resolve its directory:
 
-1. `.windloop/specs/SPEC/` — if exists, use it
-2. `.kiro/specs/SPEC/` — if exists, use it
+1. `.kiro/specs/SPEC/` — if exists, use it
+2. `.windloop/specs/SPEC/` — if exists, use it
 3. Neither → error
 
-When no name is given, list directories in `.windloop/specs/` and `.kiro/specs/`. If exactly one spec exists, use it automatically.
+When no name is given, list directories in `.kiro/specs/` and `.windloop/specs/`. If exactly one spec exists, use it automatically.
 
 Let **SPEC_DIR** be the resolved directory.
 

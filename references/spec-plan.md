@@ -26,6 +26,9 @@ Each spec MUST have its own subdirectory — never put spec files directly in `.
 2. Create `.windloop/specs/SPEC/`
 3. All spec files go inside `.windloop/specs/SPEC/`
 
+This is intentional: prefer `.kiro` whenever the project already uses it, then
+fall back to `.windloop`.
+
 If the host project has an `AGENTS.md`, append the windloop snippet from SKILL.md. If not, create it.
 
 #### 1. Scan existing project
